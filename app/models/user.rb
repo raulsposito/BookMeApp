@@ -7,6 +7,10 @@ class User < ApplicationRecord
     has_many :bookings
     has_many :barbers ,through: :bookings
 
+    belongs_to :account
+    
+    has_many :clients
+
     def self.find_or_create_by_google(auth)
         self.find_or_create_by(email: auth[:info][:email]) do |u|
             u.password = SecureRandom.hex

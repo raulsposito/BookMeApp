@@ -1,0 +1,10 @@
+<div class="scrollview">
+    <h1>Meet out Team!</h1>
+
+    <% @barbers.each do |barber| %>
+        <p><%= barber.first_name %></p>
+        <br>
+        <p><img src="<%= barber.photo %>" alt="barber avatar" width="250" height="250"></p>
+        <br>
+    <% end %>
+</div>

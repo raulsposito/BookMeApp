@@ -71,5 +71,4 @@ class BarbersController < ApplicationController
       def barber_params
         params.require(:barber).permit(:photo, :first_name, :last_name, :user_id, :account_id)
       end
-    end
 end

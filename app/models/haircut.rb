@@ -5,4 +5,8 @@ class Haircut < ApplicationRecord
     
     has_many :bookings, :inverse_of => :haircut
     accepts_nested_attributes_for :bookings
+
+    def self.set_duration
+        @haircut.duration = 1.hour
+    end
 end

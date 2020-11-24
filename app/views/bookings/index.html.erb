@@ -1,0 +1,11 @@
+<div class="scrollview">
+    <h1>These Are All Your Bookings</h1>
+    
+    <% @bookings.each do |booking| %>
+        <p><%= booking.user.name %>, you have a booking with: <%= booking.barber.name %></p><br>
+        <p><img src="<%= booking.barber.image_url %>" alt="barber avatar" width="250" height="250"> </p>
+        <p><%= booking.date.strftime("On %m/%d/%Y") %></p>
+        <p><%= booking.date.strftime("at %I:%M%p") %></p>
+        <p><%= link_to "Your Booking", booking_path(booking) %></p>
+    <% end %>
+</div>
