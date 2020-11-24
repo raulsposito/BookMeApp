@@ -1,0 +1,13 @@
+<div class="center">
+    <h1>Log In!</h1>
+
+    <p><%= flash[:error] %></p>
+
+    <%= form_for(:user) do |f| %>
+        <p><%= f.label :email %></p>
+        <p><%= f.email_field :email %></p>
+        <p><%= f.label :password %></p>
+        <p><%= f.password_field :password %></p>
+        <p><%= f.submit "Login" %></p>
+    <% end %>
+</div>
