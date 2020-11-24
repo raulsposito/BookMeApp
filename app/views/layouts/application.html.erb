@@ -19,8 +19,25 @@
     <div class="nav-button">
       <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
     </div>
-
+    <% if logged_in? %>
+    <div class="nav-button">
+      <%= link_to "Make a Booking", new_booking_path %>
+    </div>
+    <div class="nav-button">
+      <%= link_to "View All Bookings", bookings_path %>
+    </div>
+    <div class="nav-button">
+      <%= link_to "View All Barbers", barbers_path %>
+    </div>
+    <div class="nav-button">
+      <%= link_to "View Next Week Bookings", bookings_next_week_path %>
+    </div>
+    <div class="nav-button">
+      <%= link_to "Log Out", logout_path, method: :delete %>
+    </div>
+    <% end %>
   </div>
+  
   <body>
     <%= yield %>
   </body>

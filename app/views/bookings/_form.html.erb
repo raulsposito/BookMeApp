@@ -1,0 +1,31 @@
+<%= form_for(booking) do |f| %>
+    <% if booking.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(booking.errors.count, "error") %> prohibited this from being saved:</h2>
+  
+        <ul>
+        <% booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+        <%= f.label :start %>
+        <%= f.datetime_field :start %>
+    </div>
+
+    <div class="field">
+        <%= f.label :barber %>
+        <%= f.collection_select :barber_id, Barber.all, :user_id, :name %>
+    </div>
+        
+    <div class="field">
+        <%= f.hidden_field :user_id, value: session[:user_id] %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

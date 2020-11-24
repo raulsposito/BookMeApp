@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create(name: 'Agus', email: 'elagusel1@gmail.com', password: '123')
+User.create(name: 'Leo', email: 'leobarber123@gmail.com', password: '123')
+
+Barber.create(first_name: 'Agustin', photo: 'https://cdn4.iconfinder.com/data/icons/jobs-and-occupations-2/64/Barber-job-avatar-profession-occupation-hairdresser-salon-stylist-haircut-512.png', user_id: '1')
+Barber.create(first_name: 'Leonardo', photo: 'https://cdn3.iconfinder.com/data/icons/avarta/512/barber-hairdresser-user-avatar-man-512.png', user_id: '2')

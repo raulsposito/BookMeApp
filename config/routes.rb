@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+
+  get '/bookings/next_week'
+  resources :users
   resources :bookings
   resources :schedules
   resources :clients
   resources :barbers
   resources :haircuts
+  
   root 'static#home'
-  resources :users
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :set_lesson, only: [:new]
+    #before_action :set_haircut, only: [:new]
 
     def new
         @account = Account.new
@@ -50,12 +50,12 @@ class UsersController < ApplicationController
 
     private
 
-    def set_haricut
+    def set_haircut
         @haircut = Haircut.find(params[:haircut_id])
     end
 
-    def user_params 
-        params.require(:user).permit(:name, :email, :password)
+    def user_params
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
     
     def create_client_account

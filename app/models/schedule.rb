@@ -11,7 +11,8 @@ class Schedule < ApplicationRecord
     
     validates :start, uniqueness: { scope: :barber_id, message: "You have already made this time available" }
     
-    amoeba do
-      enable
-      exclude_associations :bookings
+#    amoeba do
+#      enable
+#      exclude_associations :bookings
+#    end
 end
