@@ -1,0 +1,22 @@
+<%= f.fields_for [@user, @booking] do |b| %>
+
+    <table class="table table-bordered">
+ <thead>
+ <tr>
+   <th>Slots In The User's Time Zone</th>
+   <th>Service Provider</th>
+   <th>Booking Button</th>
+ </tr>
+ </thead>
+ <tbody>
+ <% @schedules.each do |schedule| %>
+ <% unless schedule.title == 'Booked' %>
+   <tr>
+     <td><%= local_time(schedule.start, format: '%e %b, %Y - %H:%M %P') %></td>
+     <td><%= schedule.barber.name %></td> 
+     <td><%= b.radio_button :schedule_id, schedule.id, required: true %> <i class="fa fa-calendar-plus-o"></i> Book This!</td>
+   </tr>
+   <% end %>
+ <% end %>
+ </tbody>
+</table>
